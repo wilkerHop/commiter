@@ -1,13 +1,4 @@
-param(
-    [string]$message
-)
-
-## Aplication to commit autoamtically with *consistent* messages 
 git add .
-
-if (!($message -eq $null)){
-    return git commit -m "$message"
-}
 
 $OutputVariable = (git status) | Out-String
 
@@ -25,4 +16,4 @@ $message = ($files[6..($files.length - 1)] -join ' ').Trim().Replace('  ', ' ')
 
 $message | Write-Output
 
-git commit -m "$message"
+git commit -m "$message" | Write-Output

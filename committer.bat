@@ -1,0 +1,1 @@
+powershell .\committer.ps1
